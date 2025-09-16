@@ -1,0 +1,12 @@
+node {
+    //tool function returns home address of tool
+    def mvnHome=tool name: 'maven3.x', type: 'maven'
+    stage ('GIT'){
+        git credentialsId: 'self',
+        url: 'https://github.com/SangramVicky/2025devopsapp1',
+        branch : 'master'
+    }
+    stage ('Maven build'){
+        sh "${mvnHome}/bin/mvn clean package"
+    }
+}
