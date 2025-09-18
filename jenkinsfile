@@ -1,0 +1,5 @@
+node {
+stage('GIT ADD') {
+git credentialsId: 'GIT', url: 'https://github.com/SangramVicky/2025devopsapp1'
+}
+}
