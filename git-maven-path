@@ -1,0 +1,8 @@
+node {
+stage('GIT') {
+git credentialsId: 'GIT', url: 'https://github.com/SangramVicky/2025devopsapp1'
+}
+stage ('Maven'){
+sh 'mvn clean package'
+}
+}
